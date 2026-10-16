@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Laboratório Didático de Esteganografia</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">Σ</div>
+        <div>
+          <h1>EsteganoLab</h1>
+          <p>Guia executável</p>
+        </div>
+      </div>
+
+      <div class="sidebar-tools">
+        <label class="search-wrap">
+          <span>Buscar exemplo</span>
+          <input id="search" type="search" placeholder="LSB, DCT, Unicode..." />
+        </label>
+        <div class="progress-line">
+          <span id="progress-text">0 / 0 executados</span>
+          <div class="progress-track"><div id="progress-fill" class="progress-fill"></div></div>
+        </div>
+      </div>
+
+      <nav id="example-nav" class="example-nav" aria-label="Exemplos"></nav>
+
+      <div class="sidebar-note">
+        <strong>Como estudar</strong>
+        <p>Leia o código à esquerda, faça uma previsão mental e só então pressione ▶ Executar.</p>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <div class="eyebrow" id="chapter-label">Selecione um exemplo</div>
+          <h2 id="example-title">Laboratório Didático de Esteganografia</h2>
+          <p id="example-summary">Os exemplos do guia foram transformados em scripts Python executáveis.</p>
+        </div>
+        <div id="reference-badges" class="reference-badges"></div>
+      </header>
+
+      <!-- Box de explicação para leigos -->
+      <div id="explanation-box" class="explanation-box" hidden>
+        <div class="explanation-icon">?</div>
+        <div class="explanation-body">
+          <div class="explanation-label" id="explain-chapter"></div>
+          <strong id="explain-title"></strong>
+          <p id="explain-summary"></p>
+          <div class="explanation-algo-label">Como funciona o algoritmo</div>
+          <p id="explain-algorithm"></p>
+        </div>
+        <div class="explanation-badge">Sandbox ativo</div>
+      </div>
+
+      <section class="workspace">
+        <article class="panel code-panel">
+          <div class="panel-header">
+            <div>
+              <span class="panel-kicker">Python</span>
+              <h3 id="code-panel-title">Código</h3>
+            </div>
+            <div class="panel-actions">
+              <button id="reset-btn" class="secondary-btn" type="button" hidden>Restaurar</button>
+              <button id="edit-btn" class="secondary-btn" type="button" disabled>Editar</button>
+              <button id="copy-btn" class="secondary-btn" type="button">Copiar</button>
+              <button id="run-btn" class="run-btn" type="button" disabled>
+                <span class="play-icon">▶</span>
+                Executar
+              </button>
+            </div>
+          </div>
+          <textarea
+            id="code-editor"
+            class="code-editor"
+            readonly
+            spellcheck="false"
+            autocomplete="off"
+            autocorrect="off"
+            autocapitalize="off"
+            wrap="off"
+          ># Selecione um exemplo no menu à esquerda.</textarea>
+        </article>
+
+        <article class="panel result-panel">
+          <div class="panel-header">
+            <div>
+              <span class="panel-kicker">Execução</span>
+              <h3>Passo a passo</h3>
+            </div>
+            <div id="run-status" class="run-status idle">Aguardando</div>
+          </div>
+          <div id="result-view" class="result-view empty-state">
+            <div class="empty-icon">▶</div>
+            <h4>Execute um exemplo</h4>
+            <p>Os estados intermediários aparecem aqui, um de cada vez, para acompanhar o raciocínio.</p>
+          </div>
+        </article>
+      </section>
+
+      <footer class="footer-note">
+        Ambiente didático · execução em sandbox isolado (sem acesso à rede) · edições no código ficam apenas nesta sessão.
+      </footer>
+    </main>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
